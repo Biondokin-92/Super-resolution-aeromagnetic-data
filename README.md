@@ -55,10 +55,12 @@ python train_4x.py
 
 ## 🖼️ Results
 ### Quantitative
- ![image](/fig/red.png)
+High-resolution aeromagnetic map through Transformer and CNNs
 
-### Visual
- ![image](/fig/dota.png)
+![High-resolution aeromagnetic map](fig/QuebecHRLR_MagneticMap.png)
+![Loss curve](fig/Loss-Copy.png)
+![VD Example](fig/VD.png)
+![PSNR/SSIM Comparison](fig/psnr_ssim_comparison.png)
 
 ## Acknowledgments
 Our TTST mainly borrows from DRSFormer (https://github.com/cschenxiang/DRSformer) and [SKNet](https://github.com/implus/SKNet).  
