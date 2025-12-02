@@ -1,18 +1,13 @@
-<<<<<<< HEAD
-# TTST (IEEE TIP 2024)
-### 📖[**Paper**](https://ieeexplore.ieee.org/document/10387229) | 🖼️[**PDF**](/fig/TTST.pdf)
+High-resolution aeromagnetic map through  transformer and CNNs
 
-PyTorch codes for "[TTST: A Top-k Token Selective Transformer for Remote Sensing Image Super-Resolution](https://ieeexplore.ieee.org/document/10387229)", **IEEE Transactions on Image Processing (TIP)**, 2024.
 
-- Authors: [Yi Xiao](https://xy-boy.github.io/), [Qiangqiang Yuan*](http://qqyuan.users.sgg.whu.edu.cn/), [Kui Jiang](https://homepage.hit.edu.cn/jiangkui?lang=zh), [Jiang He](https://jianghe96.github.io/), [Chia-Wen Lin](https://www.ee.nthu.edu.tw/cwlin/), and [Liangpei Zhang](http://www.lmars.whu.edu.cn/prof_web/zhangliangpei/rs/index.html)<br>
-- Wuhan University, Harbin Institute of Technology, and National Tsinghua University
 
 ### :tada::tada: News :tada::tada:
-- The pre-trained TTST (×4) was released for a quick test on *remote sensing* images! [[Download Pre-trained Model](https://github.com/XY-boy/TTST/blob/main/saved_models/ttst_4x.pth)]
-## Abstract
-> Transformer-based method has demonstrated promising performance in image super-resolution tasks, due to its long-range and global aggregation capability. However, the existing Transformer brings two critical challenges for applying it in large-area earth observation scenes: (1) redundant token representation due to most irrelevant tokens; (2) single-scale representation which ignores scale correlation modeling of similar ground observation targets. To this end, this paper proposes to adaptively eliminate the interference of irreverent tokens for a more compact self-attention calculation. Specifically, we devise a Residual Token Selective Group (RTSG) to grasp the most crucial token by dynamically selecting the top-k keys in terms of score ranking for each query. For better feature aggregation, a Multi-scale Feed-forward Layer (MFL) is developed to generate an enriched representation of multi-scale feature mixtures during feed-forward process. Moreover, we also proposed a Global Context Attention (GCA) to fully explore the most informative components, thus introducing more inductive bias to the RTSG for an accurate reconstruction. In particular, multiple cascaded RTSGs form our final Top-k Token Selective Transformer (TTST) to achieve progressive representation. Extensive experiments on simulated and real-world remote sensing datasets demonstrate our TTST could perform favorably against state-of-the-art CNN-based and Transformer-based methods, both qualitatively and quantitatively. In brief, TTST outperforms the state-of-the-art approach (HAT-L) in terms of PSNR by 0.14 dB on average, but only accounts for 47.26\% and 46.97\% of its computational cost and parameters.
-## Network  
- ![image](/fig/network.png)
+
+ABSTRACT
+Given the diversity of optimization techniques available for super-resolution, the quality of reconstructed outputs often varies substantially with the characteristics of the input data. Identifying the most suitable optimization strategy for a given dataset is therefore crucial. In the case of aeromagnetic surveys, accuracy is especially important, as high-fidelity reconstructions are essential for producing robust geological interpretations.
+Several studies have explored the use of perceptual loss functions and adversarial optimization to enhance aeromagnetic resolution. Although these GAN-based approaches can generate visually appealing results, they suffer from notable limitations. Perceptual losses are designed to align with human visual preferences, yet they often fail to preserve pixel-level fidelity resulting in degraded quantitative performance in metrics such as PSNR and SSIM. This mismatch between visual realism and numerical accuracy poses a challenge for geological applications, where structural precision is indispensable. we examine a broad range of learning and optimization strategies implemented across multiple architectures for aeromagnetic super-resolution. Through a comparative analysis, we assess the ability of Transformer-based models and convolutional neural networks (CNNs) to recover high-frequency geological information. Our goal is to determine whether attention-driven architectures and residual CNN designs can mitigate the limitations inherent to adversarial methods achieving both pixel fidelity and realistic visualisation. For this purpose, we implement four state-of-the-art architectures that incorporate attention mechanisms and residual learning to generate highly consistent super-resolution aeromagnetic maps. Our findings indicate that even well-designed, relatively simple CNNs can outperform carefully optimized GAN models. Networks trained with adversarial objectives consistently achieved lower validation metrics. This behavior is primarily caused by the nature of their objective function and the dynamics of adversarial optimization, which tend to prioritize fooling a discriminator overachieving stable, generalizable feature representations. In contrast, Transformer-based architectures particularly hybrid attention models outperformed all other approaches, producing highly accurate reconstructions and superior recovery of high-frequency geological structures.
+
  
 ## 🧩 Install
 ```
@@ -77,17 +72,26 @@ Email: xiao_yi@whu.edu.cn; xy574475@gmail.com
 If you find our work helpful in your research, please consider citing it. We appreciate your support！😊
 
 ```
-@ARTICLE{xiao2024ttst,
-  author={Xiao, Yi and Yuan, Qiangqiang and Jiang, Kui and He, Jiang and Lin, Chia-Wen and Zhang, Liangpei},
-  journal={IEEE Transactions on Image Processing}, 
-  title={TTST: A Top-k Token Selective Transformer for Remote Sensing Image Super-Resolution}, 
-  year={2024},
-  volume={33},
-  number={},
-  pages={738-752},
-  doi={10.1109/TIP.2023.3349004}
-}
-```
-=======
-# Super-resolution-aeromagnetic-data
->>>>>>> 9137d071b7973fb39d0c7478025df06a04efc0fe
+# Super-resolution Aeromagnetic Data
+
+High-resolution aeromagnetic map through Transformer and CNNs
+
+### Quantitative
+![High-resolution aeromagnetic map](fig/QuebecHRLR_MagneticMap.png)
+
+### Visual
+![Loss curve](fig/Loss - Copy.png)
+
+## Requirements
+- Python 3.8
+- tensorlayer>=2.0.0
+- imgaug>=0.2.5
+- h5py==2.10.0
+- tensorflow-gpu==2.0.0
+- CUDA 10.1
+- cuDNN 7.4
+
+## Usage
+### Quick Test
+- Step I: Prepare your dataset
+
