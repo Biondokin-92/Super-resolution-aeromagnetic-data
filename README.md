@@ -59,10 +59,20 @@ python train_4x.py
 ### Aaeromagnetic map 
 
 ![High-resolution aeromagnetic map](fig/QuebecHRLR_MagneticMap.png)
+
+### Example of generated maps from different models
 ![Example of generated maps from different models](fig/Results_1_SR.png)
+
+### Vertical derivation
 ![Vertical derivation](fig/VD.png)
+
+### Loss
 ![Loss](fig/Loss.png)
+
+### Cross-plot
 ![Cross-plot](fig/CrossPlot_ALL.png)
+
+### PSNR/SSIM Comparison
 ![PSNR/SSIM Comparison](fig/psnr_ssim_comparison_7.png)
 
 
