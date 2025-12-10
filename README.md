@@ -59,11 +59,12 @@ python train_4x.py
 ### Aaeromagnetic map 
 
 ![High-resolution aeromagnetic map](fig/QuebecHRLR_MagneticMap.png)
-![Example of generated maps from differents  nodels](fig/Results_1_SR)
-![vertical derivation](fig/VD)
-![Loss](fig/Loss )
-![Cross-plot](fig/CrossPlot_ALL )
-![PSNR/SSIM Comparison](fig/psnr_ssim_comparison (7))
+![Example of generated maps from different models](fig/Results_1_SR.png)
+![Vertical derivation](fig/VD.png)
+![Loss](fig/Loss.png)
+![Cross-plot](fig/CrossPlot_ALL.png)
+![PSNR/SSIM Comparison](fig/psnr_ssim_comparison_7.png)
+
 
 ## Acknowledgments
 Our TTST mainly borrows from DRSFormer (https://github.com/cschenxiang/DRSformer) and [SKNet](https://github.com/implus/SKNet).  
