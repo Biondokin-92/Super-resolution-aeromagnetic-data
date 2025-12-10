@@ -1,15 +1,8 @@
 High-resolution aeromagnetic map through  transformer and CNNs
+This is Originally code from : https://github.com/XY-boy/TTST
 
-
-
-### :tada::tada: News :tada::tada:
-
-ABSTRACT
-Given the diversity of optimization techniques available for super-resolution, the quality of reconstructed outputs often varies substantially with the characteristics of the input data. Identifying the most suitable optimization strategy for a given dataset is therefore crucial. In the case of aeromagnetic surveys, accuracy is especially important, as high-fidelity reconstructions are essential for producing robust geological interpretations.
-Several studies have explored the use of perceptual loss functions and adversarial optimization to enhance aeromagnetic resolution. Although these GAN-based approaches can generate visually appealing results, they suffer from notable limitations. Perceptual losses are designed to align with human visual preferences, yet they often fail to preserve pixel-level fidelity resulting in degraded quantitative performance in metrics such as PSNR and SSIM. This mismatch between visual realism and numerical accuracy poses a challenge for geological applications, where structural precision is indispensable. we examine a broad range of learning and optimization strategies implemented across multiple architectures for aeromagnetic super-resolution. Through a comparative analysis, we assess the ability of Transformer-based models and convolutional neural networks (CNNs) to recover high-frequency geological information. Our goal is to determine whether attention-driven architectures and residual CNN designs can mitigate the limitations inherent to adversarial methods achieving both pixel fidelity and realistic visualisation. For this purpose, we implement four state-of-the-art architectures that incorporate attention mechanisms and residual learning to generate highly consistent super-resolution aeromagnetic maps. Our findings indicate that even well-designed, relatively simple CNNs can outperform carefully optimized GAN models. Networks trained with adversarial objectives consistently achieved lower validation metrics. This behavior is primarily caused by the nature of their objective function and the dynamics of adversarial optimization, which tend to prioritize fooling a discriminator overachieving stable, generalizable feature representations. In contrast, Transformer-based architectures particularly hybrid attention models outperformed all other approaches, producing highly accurate reconstructions and superior recovery of high-frequency geological structures.
-
- 
-## 🧩 Install
+ABSTRACT:
+This study investigated deep learning–based super-resolution methods for enhancing the resolution of magnetic data from Quebec (Canada). We evaluated recent learning approaches, including attention mechanisms and residual architectures, to address the limited generalization typically observed in GAN-based models. we adapted four architcetures including EDSR, RCAN, HAT and TTST. 
 ```
 git clone https://github.com/XY-boy/TTST.git
 ```
@@ -22,9 +15,29 @@ git clone https://github.com/XY-boy/TTST.git
  > * basicsr 1.4.2 
 
 ## 🎁 Dataset
-Please download the following remote sensing benchmarks:
-| Data Type | [AID](https://captain-whu.github.io/AID/) | [DOTA-v1.0](https://captain-whu.github.io/DOTA/dataset.html) | [DIOR](https://www.sciencedirect.com/science/article/pii/S0924271619302825) | [NWPU-RESISC45](https://ieeexplore.ieee.org/abstract/document/7891544)
-| :----: | :-----: | :----: | :----: | :----: |
+🎁 Dataset
+
+Please download the following remote sensing benchmark:
+
+Data Type	Link[https://github.com/Biondokin-92/Super-resolution-aeromagnetic-data/tree/main/AID-tiny/Train]
+
+Dataset Structure
+
+The downloaded folder contains two subfolders:
+
+GT : Ground Truth (high-resolution images)
+
+LR : Low-Resolution images
+Each image must be in PNG format, with the following naming convention:
+/GT/
+000_GT.png
+001_GT.png
+...
+/LR/
+000_LR.png
+001_LR.png
+...
+
 |Training | [Download](https://captain-whu.github.io/AID/) | None | None | None |
 |Testing | [Download](https://captain-whu.github.io/AID/) | [Download](https://captain-whu.github.io/DOTA/dataset.html) | [Download](https://drive.google.com/drive/folders/1UdlgHk49iu6WpcJ5467iT-UqNPpx__CC) | [Download](https://onedrive.live.com/?authkey=%21AHHNaHIlzp%5FIXjs&id=5C5E061130630A68%21107&cid=5C5E061130630A68&parId=root&parQt=sharedby&o=OneUp)
 ## 🧩 Usage
@@ -32,17 +45,6 @@ Please download the following remote sensing benchmarks:
 [Download Pre-trained Model](https://github.com/XY-boy/TTST/blob/main/saved_models/ttst_4x.pth)
 - **Step I.**  Use the structure below to prepare your dataset.
 
-/xxxx/xxx/ (your data path)
-```
-/GT/ 
-   /000.png  
-   /···.png  
-   /099.png  
-/LR/ 
-   /000.png  
-   /···.png  
-   /099.png  
-```
 - **Step II.**  Change the `--data_dir` to your data path.
 - **Step III.**  Run the eval_4x.py
 ```
@@ -54,13 +56,14 @@ python train_4x.py
 ```
 
 ## 🖼️ Results
-### Quantitative
-High-resolution aeromagnetic map through Transformer and CNNs
+### Aaeromagnetic map 
 
 ![High-resolution aeromagnetic map](fig/QuebecHRLR_MagneticMap.png)
-![Loss curve](fig/Loss-Copy.png)
-![VD Example](fig/VD.png)
-![PSNR/SSIM Comparison](fig/psnr_ssim_comparison.png)
+![Example of generated maps from differents  nodels](fig/Results_1_SR)
+![vertical derivation](fig/VD)
+![Loss](fig/Loss )
+![Cross-plot](fig/CrossPlot_ALL )
+![PSNR/SSIM Comparison](fig/psnr_ssim_comparison (7))
 
 ## Acknowledgments
 Our TTST mainly borrows from DRSFormer (https://github.com/cschenxiang/DRSformer) and [SKNet](https://github.com/implus/SKNet).  
