@@ -53,7 +53,7 @@ Simply run all cells sequentially. The pipeline includes:
 * Evaluating the model
 * Displaying qualitative results
 👉 Open the notebook here:
-https://colab.research.google.com/drive/1JEztWRbOMtj6G5kwKci_qsdDrkgTe61Y
+[Google Colab Notebook](https://colab.research.google.com/drive/1JEztWRbOMtj6G5kwKci_qsdDrkgTe61Y)
 
 ## 🖼️ Results
 Results are available — [use this link](https://drive.google.com/drive/folders/17dp1fsmQQbCXO7lLyrE3mnsWhWYvBfn7?usp=drive_link).
