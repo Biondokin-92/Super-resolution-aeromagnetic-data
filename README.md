@@ -55,6 +55,8 @@ Simply run all cells sequentially. The pipeline includes:
 👉 Open the notebook here:
 [Google Colab Notebook](https://colab.research.google.com/drive/1JEztWRbOMtj6G5kwKci_qsdDrkgTe61Y)
 
+For comparison with ASRGAN, we refer to the following repository: https://github.com/MBS1984/Adapted-SRGAN
+
 ## 🖼️ Results
 Results are available — [use this link](https://drive.google.com/drive/folders/17dp1fsmQQbCXO7lLyrE3mnsWhWYvBfn7?usp=drive_link).
 
