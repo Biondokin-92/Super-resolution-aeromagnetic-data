@@ -52,8 +52,20 @@ Simply run all cells sequentially. The pipeline includes:
 * Training the model
 * Evaluating the model
 * Displaying qualitative results
+A complete Google Colab notebook is provided for end-to-end usage.
+
+Simply run all cells sequentially. The pipeline includes:
+* Training the model
+* Evaluating the model
+* Displaying qualitative results
+
+👉 Download the ESDR dataset:
+[ESDR Dataset (Google Drive)](https://drive.google.com/drive/folders/1DiKAkQNADkA6aAaiXLocqEcvjCKOmIYj?usp=drive_link)
+
+After downloading, extract the dataset and update the dataset path in the notebook  to match your local environment.
 👉 Open the notebook here:
-[Google Colab Notebook](https://colab.research.google.com/drive/1JEztWRbOMtj6G5kwKci_qsdDrkgTe61Y)
+[Google Colab Notebook](https://colab.research.google.com/drive/1JEztWRbOMtj6G5kwKci_qsdDrkgTe61Y) just run all cells for 
+
 
 For comparison with ASRGAN, we refer to the following repository: https://github.com/MBS1984/Adapted-SRGAN
 
