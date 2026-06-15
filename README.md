@@ -58,7 +58,6 @@ Simply run all cells sequentially. The pipeline includes:
 * Training the model
 * Evaluating the model
 * Displaying qualitative results
-## Dataset
 
 👉 **Download the ESDR dataset:**  
 [ESDR Dataset (Google Drive)](https://drive.google.com/drive/folders/1DiKAkQNADkA6aAaiXLocqEcvjCKOmIYj?usp=drive_link)
